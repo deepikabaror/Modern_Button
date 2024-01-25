@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{
+            color: yellow;
+            font-weight: bolder;
+            font-style: italic;
+            font-size: xx-large;
+            background-color: deeppink;
+            z-index: 1;
+        }
+        .btn::before{
+            content: "";
+            background-color: black;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 1s;
+            z-index: -1;
+        }
+        .btn:hover::before{
+            transform: scaleX(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn">Submit Me</div>
+    </div>
+</body>
+</html>
